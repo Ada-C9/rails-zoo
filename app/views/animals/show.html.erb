@@ -1,0 +1,30 @@
+<div class="show">
+  <h1> <%= @animal.name %> The <%= @animal.species %> </h1>
+
+  <%= link_to @animal.image do %>
+    <%= image_tag @animal.image, :size => "400x260", alt: @animal.species, class: "image" %>
+  <% end %>
+
+  <p>
+    <%= @animal.name %> is a <%= @animal.gender %> <%= @animal.species %> who is <strong><%= @animal.age %></strong>
+    <% if @animal.age <= 1 %>
+      year old.
+    <% else %>
+      years old.
+    <% end %>
+  </p>
+  <p>
+    <% if @animal.gender == "female" %>
+      Her
+    <% else %>
+      His
+    <% end %>
+    current vote is <strong><%= @animal.vote %></strong>.
+  </p>
+
+  <ul>
+    <li><%= link_to "Vote", animal_path(@animal), method: :put %></li>
+    <li><%= link_to "Update", edit_animal_path(@animal) %></li>
+    <li><%= link_to "Relocate", animal_path(@animal), :data => {:confirm => 'Are you sure to relocate this little cutie?' }, method: :delete %></li>
+  </ul>
+</div>

@@ -1,0 +1,11 @@
+<div class="list">
+  <p> Welcome to Ada Zoo! Currently we have <strong><%= @animals.size %></strong> members. Below is a full list of them. Please feel free to <strong>click</strong> on anyone you're interested in and learn more about her/him. You can also <strong>vote</strong> for the ones you really love, which will make them go to the front of the list. Have fun! 😉 </p>
+
+  <ul>
+    <% @animals.each do |animal| %>
+      <li>
+        <%= link_to "#{animal.name} (#{animal.vote})", animal_path(animal.id) %>
+      </li>
+    <% end %>
+  </ul>
+</div>

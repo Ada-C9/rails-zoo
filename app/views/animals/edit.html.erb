@@ -1,0 +1,33 @@
+<div class="form">
+  <h1>Update Animal</h1>
+
+  <%= form_for @animal do |f| %>
+    <%= f.label :name %>
+    <br>
+    <%= f.text_field :name %>
+    <br>
+
+    <%= f.label :species %>
+    <br>
+    <%= f.text_field :species %>
+    <br>
+
+    <%= f.label :gender %>
+    <br>
+    <%= f.text_field :gender %>
+    <br>
+
+    <%= f.label :age %>
+    <br>
+    <%= f.text_field :age %>
+    <br>
+
+    <%= f.label :image %>
+    <br>
+    <%= f.text_field :image %>
+    <br>
+
+    <%= f.submit "Update"%>
+  <% end %>
+
+</div>
