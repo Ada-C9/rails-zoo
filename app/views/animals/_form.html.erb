@@ -1,0 +1,25 @@
+<div class="form">
+<h2 class="my_class"><%= page_title %></h2>
+
+<%= form_for @animal do |f| %>
+<%= f.label :name %>
+<br>
+<%= f.text_field :name %>
+  <br>
+  <%= f.label :species%>
+  <br>
+  <%= f.text_area :species%>
+  <br>
+  <%= f.label :age %>
+  <br>
+  <%= f.text_field :age %>
+    <br>
+    <%= f.label :image %>
+    <br>
+    <%= f.text_field :image %>
+      <br>
+    <h3><%= f.submit %></h3>
+    <br>
+
+<% end %>
+</div>

@@ -1,7 +1,18 @@
-<h2>Animal Details</h2>
-<div>
-  <p><%= @animal.name %><strong> is a
-    <%= @animal.species %> whose age is <%= @animal.age %>
+<div class="show">
+  <h2>Animal Details</h2>
 
-  </div>
-  <% end %>
+  <p>
+    <%= @animal.name %> is a
+    <%= @animal.species %> whose age is
+    <%= @animal.age %>
+</p>
+<%= link_to @animal.image do %>
+  <%= image_tag @animal.image, :size => "400x260", alt: @animal.species, class: "image" %>
+<% end %>
+
+  <br>
+<ul>
+  <li><%= link_to "Edit", edit_animal_path(@animal) %></li>
+  <li><%= link_to "Delete", animal_path(@animal), :data => {:confirm => 'Are you sure?'}, method: :delete %></li>
+</ul>
+</div>
