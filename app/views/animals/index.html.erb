@@ -2,8 +2,10 @@
 <p>
   <% @animals.each do |animal|%>
     <p>
-      <%= animal.name + ", " + animal.species + ", " + animal.age.to_s + " years old" %>
+      <%= link_to animal.name, animal_path(animal.id)%>
     </p>
   <% end %>
 
 </p>
+
+<!-- + ", " + animal.species + ", " + animal.age.to_s + " years old"  -->
