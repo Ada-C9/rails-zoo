@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>RailsZoo</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+</head>
+
+<body>
+
+    <h1> Welcome to Zoo</h1>
+    <nav>
+    <ul>
+      <li><%= link_to "Animal List", animals_path %></li>
+      <li><%= link_to "Add an Animal ", new_animal_path %></li>
+    </ul>
+    </nav>
+    <header>
+    </header>
+  </div>
+
+
+  <%= yield %>
+  <header>
+  </header>
+</body>
+</html>

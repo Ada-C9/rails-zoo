@@ -1,0 +1,13 @@
+<div class="welcome">
+  
+      <ul>
+      <% @animals.each do |animal|%>
+        <li>
+        <%= link_to animal.name, animal_path(animal.id) %>
+
+      </li>
+      <% end %>
+
+
+    </ul>
+  </div>
