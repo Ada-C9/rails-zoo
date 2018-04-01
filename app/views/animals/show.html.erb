@@ -3,3 +3,7 @@
 <p>
   <%= @animal.name + ", " + @animal.species + ", " + @animal.age.to_s + " years old" %>
 </p>
+
+<p>
+  <%= link_to("Delete", animal_path(@animal.id), method: :delete, data: { confirm: 'Are you sure you want to delete this animal?'}) %>
+</p>
