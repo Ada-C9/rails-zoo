@@ -5,9 +5,11 @@ class AnimalsController < ApplicationController
   end
 
   def new
+    @animal = Animal.new
   end
 
   def show
+    @animal = Animal.find(params[:id])
   end
 
   def update
