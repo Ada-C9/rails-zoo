@@ -1,0 +1,11 @@
+<h3>Animals</h3>
+
+<% @animals.each do |animal| %>
+  <div class="animal">
+    <strong><%= link_to animal.name, animal_path(animal.id) %></strong>:
+    <%= animal.species %>,
+    age <%= animal.age %>
+  </div>
+<% end %>
+<br>
+<%= link_to "Add a New Animal", new_animal_path %>

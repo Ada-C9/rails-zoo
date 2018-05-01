@@ -1,0 +1,11 @@
+<h3>Animal Details</h3>
+
+<div class="animal-details">
+  <strong><%= @animal.name %></strong> the <%= @animal.species %> is <%= @animal.age %> years old
+</div>
+<br>
+<%= link_to "Edit Animal", edit_animal_path(@animal.id) %>
+<br>
+<%= link_to "Delete Animal", delete_animal_path(@animal.id), method: :delete %>
+<br>
+<%= link_to "Back to All Animals", animal_index_path %>
