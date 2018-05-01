@@ -1,2 +1,3 @@
 class Animal < ApplicationRecord
+  
 end
