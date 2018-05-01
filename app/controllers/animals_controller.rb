@@ -12,6 +12,22 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
   end
 
+  def create
+    @animal = Animal.new(
+      name: params[:animal][:name],
+      species: params[:animal][:species],
+      age: params[:animal][:age]
+    )
+    # ".save" returns a boolean result
+    if @animal.save
+      # success
+      redirect_to animals_path
+    else
+      # failure
+      render :new
+    end
+  end
+
   def update
 
   end
