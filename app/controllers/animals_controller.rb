@@ -32,6 +32,23 @@ class AnimalsController < ApplicationController
     @animal = Animal.find(params[:id])
   end
 
+  def update
+    # update the database
+    @animal = Animal.find(params[:id])
+    result = @animal.update({
+      name: params[:animal][:name],
+      species: params[:animal][:species],
+      age: params[:animal][:age]
+    })
+    if result
+      # if successful, go back to the show view
+      redirect_to animal_path(@animal.id) # params[:id]
+    else
+      # if unsucessful, stay on the form
+      render :edit
+    end 
+  end
+
   def destroy
 
   end
