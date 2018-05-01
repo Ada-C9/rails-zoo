@@ -46,10 +46,18 @@ class AnimalsController < ApplicationController
     else
       # if unsucessful, stay on the form
       render :edit
-    end 
+    end
   end
 
-  def destroy
+  def delete
+    # remove this animal from db; don't need instance variable here because not using it in a view
+    animal = Animal.find(params[:id])
 
+    if animal.destroy
+    # if successful, go back to index page
+    redirect_to animals_path # same as what we had in create method
+    else
+    # if unsucessful, show an error - add error messages before updating this 'else'
+    end
   end
 end
