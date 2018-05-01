@@ -2,7 +2,7 @@
 
 <% @animals.each do |animal| %>
   <div class="animal">
-    <strong><%= animal.name %></strong>
+    <strong><%= link_to animal.name, animal_path(animal.id) %></strong>
     <%= animal.species %>
     <%= animal.age %>
   </div>
