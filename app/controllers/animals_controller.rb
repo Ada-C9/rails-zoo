@@ -28,8 +28,8 @@ class AnimalsController < ApplicationController
     end
   end
 
-  def update
-
+  def edit
+    @animal = Animal.find(params[:id])
   end
 
   def destroy
